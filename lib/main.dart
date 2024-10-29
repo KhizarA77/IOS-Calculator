@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ios_calculator/HomePage.dart';
 import 'package:ios_calculator/Screen.dart';
+import 'package:ios_calculator/operationButtons.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         title: 'Calculator',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.black),
-          appBarTheme: AppBarTheme(),
+          appBarTheme: const AppBarTheme(),
           useMaterial3: false,
         ),
         home: const Homepage(),

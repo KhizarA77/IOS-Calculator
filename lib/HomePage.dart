@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ios_calculator/Screen.dart';
+// import 'package:ios_calculator/Screen.dart';
 import 'package:ios_calculator/ScreenUI.dart';
-import 'package:provider/provider.dart';
+import 'package:ios_calculator/buttonsLayout.dart';
+// import 'package:provider/provider.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({ super.key });
@@ -9,11 +10,11 @@ class Homepage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Row(
-        children: [ // 2 children, screen and buttons
+    return const Scaffold(
+      body: Column(
+        children: [
           ScreenUI(),
-
+          ButtonsLayout(),
         ],
       ),
     );
