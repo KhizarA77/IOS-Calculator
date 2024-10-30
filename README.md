@@ -1,16 +1,7 @@
-# ios_calculator
+## IOS Calculator 
 
-A new Flutter project.
+The project is a simple recreation of the IOS calculator app using flutter for the UI and provider for state management.
 
-## Getting Started
+Here is a video showcasing the application.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[Watch the Video][https://drive.google.com/uc?export=download&id=1fJB6zmpsplHHSaMkUDgVKklA1jWD4N_t]
