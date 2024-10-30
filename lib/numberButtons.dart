@@ -12,7 +12,7 @@ class CustomNumberButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: width,
       child: Padding(
         padding: const EdgeInsets.all(2),

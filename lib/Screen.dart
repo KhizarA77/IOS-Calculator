@@ -12,7 +12,7 @@ class Screen with ChangeNotifier {
   void setNum1(String operation) {
     num1 = double.parse(_expression);
     _operation = operation;
-    clearExpression();
+    setExpression('');
   }
 
   void setNum2() {
@@ -83,8 +83,15 @@ class Screen with ChangeNotifier {
     notifyListeners();
   }
 
+  void setExpression(String value) {
+    _expression = value;
+    notifyListeners();
+  }
+
   void clearExpression() {
     _expression = '0';
+    num1 = 0;
+    num2 = 0;
     notifyListeners();
   }
 }

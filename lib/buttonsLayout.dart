@@ -8,54 +8,61 @@ class ButtonsLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(top: 30),
+    return const SizedBox(
       height: 590,
-      color: Colors.black,
-      child: const Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Row(
-            children: [
-              CustomFunctionButtons(operation: 'AC'),
-              CustomFunctionButtons(operation: '+/-'),
-              CustomFunctionButtons(operation: '%'),
-              CustomOperationButtons(operation: '÷'),
-            ],
-          ),
-          Row(
-            children: [
-              CustomNumberButtons(number: 7),
-              CustomNumberButtons(number: 8),
-              CustomNumberButtons(number: 9),
-              CustomOperationButtons(operation: '×'),
-            ],
-          ),
-          Row(
-            children: [
-              CustomNumberButtons(number: 4),
-              CustomNumberButtons(number: 5),
-              CustomNumberButtons(number: 6),
-              CustomOperationButtons(operation: '-'),
-            ],
-          ),
-          Row(
-            children: [
-              CustomNumberButtons(number: 1),
-              CustomNumberButtons(number: 2),
-              CustomNumberButtons(number: 3),
-              CustomOperationButtons(operation: '+'),
-            ],
-          ),
-          Row(
-            children: [
-              SizedBox(width: 10),
-              CustomNumberButtons(number: 0, width: 190),
-              CustomFunctionButtons(operation: '.'),
-              CustomOperationButtons(operation: '='),
-            ],
-          ),
-        ],
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: Colors.black,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Row(
+              children: [
+                SizedBox(width: 5),
+                CustomFunctionButtons(operation: 'AC'),
+                CustomFunctionButtons(operation: '+/-'),
+                CustomFunctionButtons(operation: '%'),
+                CustomOperationButtons(operation: '÷'),
+              ],
+            ),
+            Row(
+              children: [
+                SizedBox(width: 5),
+                CustomNumberButtons(number: 7),
+                CustomNumberButtons(number: 8),
+                CustomNumberButtons(number: 9),
+                CustomOperationButtons(operation: '×'),
+              ],
+            ),
+            Row(
+              children: [
+                SizedBox(width: 5),
+                CustomNumberButtons(number: 4),
+                CustomNumberButtons(number: 5),
+                CustomNumberButtons(number: 6),
+                CustomOperationButtons(operation: '-'),
+              ],
+            ),
+            Row(
+              children: [
+                SizedBox(width: 5),
+                CustomNumberButtons(number: 1),
+                CustomNumberButtons(number: 2),
+                CustomNumberButtons(number: 3),
+                CustomOperationButtons(operation: '+'),
+              ],
+            ),
+            Row(
+              children: [
+                SizedBox(width: 15),
+                CustomNumberButtons(number: 0, width: 190),
+                CustomFunctionButtons(operation: '.'),
+                CustomOperationButtons(operation: '='),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

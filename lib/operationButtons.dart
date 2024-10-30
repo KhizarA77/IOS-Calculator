@@ -10,7 +10,7 @@ class CustomOperationButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 100,
       child: Padding(
         padding: const EdgeInsets.all(2),
