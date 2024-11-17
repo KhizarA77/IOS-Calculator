@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:ios_calculator/Screen.dart';
 import 'package:provider/provider.dart';
 
-
 class CustomOperationButtons extends StatelessWidget {
   const CustomOperationButtons({ super.key, required this.operation });
 
@@ -18,7 +17,8 @@ class CustomOperationButtons extends StatelessWidget {
           onPressed: () {
             if (operation == '=') {
               context.read<Screen>().setNum2();
-              context.read<Screen>().evaluateExpression();
+              context.read<Screen>().evaluateExpression(context);
+
             }
             else {
               if (context.read<Screen>().expression == '0' && operation == '-') {

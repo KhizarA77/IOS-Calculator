@@ -9,7 +9,7 @@ class ButtonsLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const SizedBox(
-      height: 590,
+      height: 510.2,
       child: DecoratedBox(
         decoration: BoxDecoration(
           color: Colors.black,

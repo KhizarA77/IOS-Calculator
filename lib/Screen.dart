@@ -1,22 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:ios_calculator/History.dart';
+import 'package:provider/provider.dart';
 
 class Screen with ChangeNotifier {
   String _expression = '0';
   String get expression => _expression;
-  double num1 = 0;
-  double num2 = 0;
+  double _num1 = 0;
+  double _num2 = 0;
   String _operation = '';
+
+  double get num1 => _num1;
+  double get num2 => _num2;
+  String get operation => _operation;
+
   static final operators = ['+', '-', '*', '/'];
   static final digits = RegExp(r'\d');
 
+
   void setNum1(String operation) {
-    num1 = double.parse(_expression);
+    _num1 = double.parse(_expression);
     _operation = operation;
     setExpression('0');
   }
 
   void setNum2() {
-    num2 = double.parse(_expression);
+    _num2 = double.parse(_expression);
   }
 
   void addExpression(String value) {
@@ -40,26 +48,26 @@ class Screen with ChangeNotifier {
     notifyListeners();
   }
 
-  void evaluateExpression() {
+  void evaluateExpression(BuildContext context) {
     switch (_operation) {
       case '+':
-        _expression = (num1 + num2).toString();
+        _expression = (_num1 + _num2).toString();
         break;
       case '-':
-        _expression = (num1 - num2).toString();
+        _expression = (_num1 - _num2).toString();
         break;
       case '×':
-        _expression = (num1 * num2).toString();
+        _expression = (_num1 * _num2).toString();
         break;
       case '÷':
-        _expression = (num1 / num2).toString();
+        _expression = (_num1 / _num2).toString();
         break;
       default:
         break;
     }
-
-    num1 = double.parse(_expression);
-    num2 = 0;
+    context.read<History>().addCalculation('$num1 $_operation $num2 = $_expression');
+    _num1 = double.parse(_expression);
+    _num2 = 0;
     notifyListeners();
   }
 
@@ -90,8 +98,8 @@ class Screen with ChangeNotifier {
 
   void clearExpression() {
     _expression = '0';
-    num1 = 0;
-    num2 = 0;
+    _num1 = 0;
+    _num2 = 0;
     notifyListeners();
   }
 }
